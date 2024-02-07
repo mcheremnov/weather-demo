@@ -1,9 +1,10 @@
 import { Module } from '@nestjs/common';
 import { DbService } from './db.service';
-import { DbController } from './db.controller';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { WeatherEntity } from './entities/weather.entity';
 
 @Module({
-  controllers: [DbController],
+  imports: [TypeOrmModule.forFeature([WeatherEntity])],
   providers: [DbService],
 })
 export class DbModule {}
