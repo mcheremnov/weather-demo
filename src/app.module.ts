@@ -18,6 +18,7 @@ import { WeatherEntity } from './db/entities/weather.entity';
       database: process.env.DB_NAME,
       entities: [WeatherEntity],
       synchronize: true,
+      autoLoadEntities: true,
     }),
     ConfigModule.forRoot(),
   ],

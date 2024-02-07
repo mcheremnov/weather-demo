@@ -5,12 +5,12 @@ export class WeatherEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ nullable: false })
   latitude: number;
 
-  @Column()
+  @Column({ nullable: false })
   longitude: number;
 
-  @Column({ type: 'json', nullable: true })
+  @Column({ type: 'json', nullable: false })
   data: Record<string, unknown>;
 }

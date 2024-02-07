@@ -1,6 +1,6 @@
 export interface IRequest {
-  lat: number;
-  lon: number;
+  latitude: number;
+  longitude: number;
 }
 
 export interface IResponse {
@@ -10,7 +10,6 @@ export interface IResponse {
   feels_like: number;
   pressure: number;
   humidity: number;
-  uvi?: number;
   wind_speed: number;
 }
 
