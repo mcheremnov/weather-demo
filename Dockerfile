@@ -4,12 +4,15 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm run db:setup
 
-RUN npm run build
+RUN npm install
 
 COPY . .
 
+RUN npm run build && \
+    npm run database
+
 EXPOSE 3000
 
-CMD ["npm", "run", "start:prod"]
+CMD ["node", "dist/main"]
